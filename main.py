@@ -39,15 +39,8 @@ class LowScoreGame(Game):
         else:
             return "Tie"
 
-
-
-# game = Game("Chris", "Corey")
-# high_score_game = HighScoreGame("Big Boss", "Eva")
-low_score_game = LowScoreGame("Ed", "Nazz")
-
-print(f"""
-PLAYER 1 NAME = {low_score_game.player1_name}
-PLAYER 2 NAME = {low_score_game.player2_name}
-CALCULATE SCORE = {low_score_game.calculate_score(93, 45)}
-DETERMINE WINNER = {low_score_game.determine_winner(53, 54)}
-""")
+def play_game(game, data1, data2):
+    score = game.calculate_score(data1, data2)
+    winner = game.determine_winner(score[0], score[1])
+    
+    return f"{winner} wins!"
